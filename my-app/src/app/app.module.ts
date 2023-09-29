@@ -6,12 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { RelatorioDiarioComponent } from './relatorio-diario/relatorio-diario.component';
 import { PaginaInicioComponent } from './pagina-inicio/pagina-inicio.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RelatorioSemanalComponent } from './relatorio-semanal/relatorio-semanal.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     RelatorioDiarioComponent,
-      PaginaInicioComponent
+      PaginaInicioComponent,
+      RelatorioSemanalComponent
    ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [ HttpClientModule],
