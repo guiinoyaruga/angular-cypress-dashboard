@@ -7,15 +7,17 @@ import { RelatorioDiarioComponent } from './relatorio-diario/relatorio-diario.co
 import { PaginaInicioComponent } from './pagina-inicio/pagina-inicio.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RelatorioSemanalComponent } from './relatorio-semanal/relatorio-semanal.component';
+import { GraficoDiarioComponent } from './grafico-diario/grafico-diario.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     RelatorioDiarioComponent,
       PaginaInicioComponent,
-      RelatorioSemanalComponent
+      RelatorioSemanalComponent,
+      GraficoDiarioComponent
    ],
-  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule,],
   providers: [ HttpClientModule],
   bootstrap: [AppComponent],
 })
