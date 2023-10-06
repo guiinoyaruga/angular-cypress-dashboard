@@ -9,10 +9,8 @@ import { resultsService } from 'src/app/services/get-action-results.service'
 })
 export class PaginaInicioComponent implements OnInit {
 
-  public userInfo: any;
-  public constructor (public resultsService: resultsService){}
+  public constructor (){}
 
   public ngOnInit(): void {
-   this.resultsService.getTestResultsArtifact()
 }
 }
