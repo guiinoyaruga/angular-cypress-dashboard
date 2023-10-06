@@ -40,7 +40,8 @@
   }
 
   .toolbar img {
-    margin: 0 16px;
+    margin-left: 26px;
+    margin-right: 13px;
   }
 
   .content {
@@ -50,6 +51,7 @@
     max-width: 960px;
     flex-direction: column;
     align-items: center;
+
   }
 
   svg.material-icons {
