@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { resultsService } from 'src/app/services/get-action-results.service'
 
 @Component({
   selector: 'app-pagina-inicio',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaInicioComponent implements OnInit {
 
-  constructor() { }
+  public userInfo: any;
+  public constructor (public resultsService: resultsService){}
 
-  ngOnInit() {
-  }
-
+  public ngOnInit(): void {
+   this.resultsService.getTestResultsArtifact()
+}
 }
