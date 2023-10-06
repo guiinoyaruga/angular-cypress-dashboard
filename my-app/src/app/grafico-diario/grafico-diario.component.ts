@@ -25,15 +25,17 @@ export class GraficoDiarioComponent implements OnInit {
       data: {
         labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
         datasets: [{
-          label: 'Qt. de testes',
-          data: [15, 30, 56, 120, 3, 15],
-          borderWidth: 1
+          label: 'Quantidade de testes',
+          data: [150, 170, 200, 220, 232, 0],
+          borderWidth: 2,
         }]
       },
       options: {
         scales: {
+
           y: {
             beginAtZero: true
+
           }
         }
       }
