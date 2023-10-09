@@ -16,6 +16,6 @@ jobs:
       - name: Upload README.md to Google Drive
         uses: Jodebu/upload-to-drive@master
         with:
-          target: report.json
+          target: test.txt
           credentials: secrets.<DRIVE_CREDENTIALS>
           folder: secrets.<FOLDERID>
