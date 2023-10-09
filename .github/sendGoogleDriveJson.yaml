@@ -1,11 +1,28 @@
-name: pipeline
+name: Main
+on:
+  push: 
+    branches: 
+        - main
 
-steps:
-    - uses: actions/checkout@v2
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
 
-    - name: Upload Artifacts TO Google Drive
-      uses: Jumbo810/Upload_Github_Artifacts_TO_GDrive@v1.1.1
-      with:
-        target: <LOCAL_PATH_TO_YOUR_FILE>
-        credentials: ${{ secrets.<YOUR_SERVICE_ACCOUNT_CREDENTIALS> }}
-        parent_folder_id: <YOUR_DRIVE_FOLDER_ID>
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Upload to gdrive
+        uses: adityak74/google-drive-upload-git-action@main
+        with:
+          credentials: ${{ secrets.DRIVE_CREDENTIALS }}
+          filename: "report.json"
+          folderId: ${{ secrets.folderId }}
+          name: "documentation.zip" # optional string
+          overwrite: "true" # optional boolean
+
+      - name: Make Directory Structure
+        run: |
+          mkdir -p w/x/y
+          date +%s > w/x/y/z
