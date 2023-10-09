@@ -5,17 +5,23 @@ on:
         - main
 
 jobs:
-  my_job:
-    name: Upload to drive
+  gdrive-upload:
     runs-on: ubuntu-latest
     steps:
-      # Checkout
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
-      # Upload to Drive
-      - name: Upload README.md to Google Drive
-        uses: Jodebu/upload-to-drive@master
+
+      - name: Archive files
+        run: |
+          sudo apt-get update
+          sudo apt-get install zip
+          zip -r report.json *
+
+      - name: Upload to gdrive
+        uses: mathisve/gdrive-upload-action@main
         with:
-          target: report.json
+          filename: report.zip
+          name: documentation.zip
+          folderId: ${{ secrets.FOLDERID }}
           credentials: ${{ secrets.DRIVE_CREDENTIALS }}
-          folder: ${{ secrets.FOLDERID }}
+          encoded: false
