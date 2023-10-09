@@ -6,7 +6,7 @@ on:
 
 jobs:
   my_job:
-    name: Upload readme to drive
+    name: Upload to drive
     runs-on: ubuntu-latest
     steps:
       # Checkout
@@ -16,6 +16,6 @@ jobs:
       - name: Upload README.md to Google Drive
         uses: Jodebu/upload-to-drive@master
         with:
-          target: test.txt
+          target: report.json
           credentials: ${{ secrets.DRIVE_CREDENTIALS }}
           folder: ${{ secrets.FOLDERID }}
