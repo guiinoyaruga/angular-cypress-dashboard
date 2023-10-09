@@ -18,4 +18,4 @@ jobs:
         with:
           target: report.json
           credentials: secrets.<DRIVE_CREDENTIALS>
-          folder: secrets.FOLDERID
+          folder: secrets.<FOLDERID>
