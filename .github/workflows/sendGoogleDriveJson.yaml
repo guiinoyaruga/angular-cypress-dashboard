@@ -17,5 +17,5 @@ jobs:
         uses: Jodebu/upload-to-drive@master
         with:
           target: test.txt
-          credentials: secrets.<DRIVE_CREDENTIALS>
-          folder: secrets.<FOLDERID>
+          credentials: ${{ secrets.DRIVE_CREDENTIALS }}
+          folder: ${{ secrets.FOLDERID }}
