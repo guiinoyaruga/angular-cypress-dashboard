@@ -15,7 +15,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install zip
-          zip -r report.json *
+          zip -r archive.zip *
 
       - name: Upload to gdrive
         uses: mathisve/gdrive-upload-action@main
