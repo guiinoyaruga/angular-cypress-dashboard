@@ -13,7 +13,7 @@ jobs:
         uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.DRIVE_CREDENTIALS }}
-          filename: "report.json"
+          filename: "/report.json"
           folderId: ${{ secrets.folderId }}
           name: "documentation.json" # optional string
           overwrite: "true" # optional boolean
