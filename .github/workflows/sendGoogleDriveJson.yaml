@@ -9,19 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-    - name: Upload to Google Drive
-      run: |
-
-        curl https://rclone.org/install.sh | sudo bash
-
-        # Configurar o rclone para usar as credenciais do Google Drive
-        echo "$GOOGLE_DRIVE_CREDENTIALS" > ~/gdrive-creds.json
-        rclone config create google_drive drive client_id --config ~/gdrive-creds.json
-
-        # Copiar o arquivo gerado para o Google Drive
-        rclone copy /path/to/generated/file google_drive:Tech
-      env:
-        GOOGLE_DRIVE_CREDENTIALS: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
-
-          
+      - name: Upload to gdrive
+        uses: adityak74/google-drive-upload-git-action@main
+        with:
+          credentials: ${{ secrets.DRIVE_CREDENTIALS }}
+          filename: "report.json"
+          folderId: ${{ secrets.folderId }}
+          name: "documentation.json" # optional string
+          overwrite: "true" # optional boolean
